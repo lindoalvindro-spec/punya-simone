@@ -17,39 +17,39 @@ export default function PhotoGridFlipScreen({ onNext }) {
     {
       id: 0,
       image: '/c 1.jpeg',
-      title: 'Your Smile',
-      quote: 'Every time I see you smile, my entire mood brightens up instantly. It is that simple, yet it never fails 🤍',
+      title: 'La Tua Bellezza',
+      quote: 'Se tutto ciò che il mondo vede è la tua bellezza, allora lascia che le tue imperfezioni diventino anche mie.',
     },
     {
       id: 1,
       image: '/c 2.jpeg',
-      title: 'My Safe Space',
-      quote: 'Thank you for always being there on the other side of the call, listening to all my stories without ever growing weary 📞✨',
+      title: 'La Mia Luna',
+      quote: 'Se la luna potesse parlare, quanto sarebbe gelosa—perché non avrei mai bisogno di guardarla, perché per me, la bellezza sei sempre stata tu.',
     },
     {
       id: 2,
       image: '/c 3.jpeg',
-      title: 'Favorite View',
-      quote: 'Out of all the breathtaking sights in this world, you are still my absolute favorite view to look at 🌅',
+      title: 'Un Luogo Sicuro',
+      quote: 'E se, un giorno, i tuoi passi diventassero più pesanti in questo mondo incerto, spero che tu possa sempre ricordare che ci sarà un luogo per te dove poter deporre ogni affanno che verrà.',
     },
     {
       id: 3,
       image: '/c 4.jpeg',
-      title: 'Your Warmth',
-      quote: 'Your presence always brings a sense of peace and comfort that I could never find anywhere else ☕🤍',
+      title: 'Senza Paura',
+      quote: 'Rompi, per quanto tu abbia bisogno di farlo. Crolla, per quanto tu debba crollare. Perché non c’è parte di te che tu debba nascondere perché io possa continuare ad amarti.',
     },
     {
       id: 4,
       image: '/c 5.jpeg',
-      title: 'Precious Moments',
-      quote: 'No matter how simple the moment is, when spent with you, it always turns into a cherished memory 🌿',
+      title: 'Scegliere Te',
+      quote: 'Non devi essere intera perché io possa amarti. Anche nelle tue crepe, anche nelle tue rovine, io continuerò a scegliere te.',
     },
     {
       id: 5,
       image: '/c 6.jpeg',
       fallback: '/c 2.jpeg',
-      title: 'Always You',
-      quote: 'Out of all the millions of possibilities in this universe, I will still choose you, again and again 🤍',
+      title: 'Ti Amo',
+      quote: 'Ti amo, amore mio 🤍',
     },
   ];
 
@@ -169,7 +169,7 @@ export default function PhotoGridFlipScreen({ onNext }) {
               className="photo-flip-card"
               onClick={() => handleFlipCard(item.id)}
               style={{
-                height: '175px',
+                height: '188px',
                 perspective: '1000px',
                 cursor: 'pointer',
                 userSelect: 'none',
@@ -263,30 +263,34 @@ export default function PhotoGridFlipScreen({ onNext }) {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '14px 10px',
+                    padding: '12px 9px',
                     textAlign: 'center',
                     color: '#ffffff',
+                    overflowY: 'auto',
                   }}
                 >
-                  <Heart size={16} color="#38bdf8" fill="#38bdf8" style={{ marginBottom: '6px' }} />
+                  <Heart size={14} color="#38bdf8" fill="#38bdf8" style={{ marginBottom: '4px', flexShrink: 0 }} />
                   <h4
                     style={{
                       fontFamily: 'var(--font-handwriting)',
-                      fontSize: '1.25rem',
+                      fontSize: '1.18rem',
                       color: '#ffffff',
-                      marginBottom: '6px',
-                      lineHeight: 1.15,
+                      marginBottom: '4px',
+                      lineHeight: 1.1,
+                      flexShrink: 0,
                     }}
                   >
                     {item.title}
                   </h4>
                   <p
                     style={{
-                      fontSize: '0.74rem',
+                      fontSize: item.id === 5 ? '0.88rem' : '0.71rem',
                       color: '#e0f2fe',
                       lineHeight: 1.35,
                       fontFamily: 'var(--font-body)',
                       margin: 0,
+                      fontStyle: 'italic',
+                      fontWeight: item.id === 5 ? '700' : '400',
                     }}
                   >
                     "{item.quote}"
