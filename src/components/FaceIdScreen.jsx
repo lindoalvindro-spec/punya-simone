@@ -218,16 +218,17 @@ export default function FaceIdScreen({ onComplete }) {
           }}
         >
           <img
-            src="/avatar.jpg"
-            alt="Face ID Profile"
+            src="/c 4.jpeg"
+            alt="Simone"
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
+              objectPosition: 'center 20%',
               filter: scanState === 'verified' ? 'none' : 'contrast(1.05)',
             }}
             onError={(e) => {
-              e.currentTarget.src = '/889038782737162474.jfif';
+              e.currentTarget.src = '/c 1.jpeg';
             }}
           />
 

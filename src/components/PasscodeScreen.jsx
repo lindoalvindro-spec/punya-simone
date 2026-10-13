@@ -260,17 +260,17 @@ export default function PasscodeScreen({ onUnlock }) {
             }}
           >
             <img
-              src="/avatar.jpg"
-              alt="Profile"
+              src="/c 4.jpeg"
+              alt="Simone"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
+                objectPosition: 'center 20%',
                 display: 'block',
               }}
               onError={(e) => {
-                // Fallback jika avatar.jpg belum termuat
-                e.currentTarget.src = '/889038782737162474.jfif';
+                e.currentTarget.src = '/c 1.jpeg';
               }}
             />
           </div>

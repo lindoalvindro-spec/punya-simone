@@ -16,37 +16,38 @@ export default function PhotoGridFlipScreen({ onNext }) {
   const photosData = [
     {
       id: 0,
-      image: '/avatar.jpg',
+      image: '/c 1.jpeg',
       title: 'Your Smile',
       quote: 'Every time I see you smile, my entire mood brightens up instantly. It is that simple, yet it never fails 🤍',
     },
     {
       id: 1,
-      image: '/aga 1.jpeg',
+      image: '/c 2.jpeg',
       title: 'My Safe Space',
       quote: 'Thank you for always being there on the other side of the call, listening to all my stories without ever growing weary 📞✨',
     },
     {
       id: 2,
-      image: '/luc 1.jpeg',
+      image: '/c 3.jpeg',
       title: 'Favorite View',
       quote: 'Out of all the breathtaking sights in this world, you are still my absolute favorite view to look at 🌅',
     },
     {
       id: 3,
-      image: '/luc 2.jpeg',
+      image: '/c 4.jpeg',
       title: 'Your Warmth',
       quote: 'Your presence always brings a sense of peace and comfort that I could never find anywhere else ☕🤍',
     },
     {
       id: 4,
-      image: '/luc 3.jpeg',
+      image: '/c 5.jpeg',
       title: 'Precious Moments',
       quote: 'No matter how simple the moment is, when spent with you, it always turns into a cherished memory 🌿',
     },
     {
       id: 5,
-      image: '/luc 4.jpeg',
+      image: '/c 6.jpeg',
+      fallback: '/c 2.jpeg',
       title: 'Always You',
       quote: 'Out of all the millions of possibilities in this universe, I will still choose you, again and again 🤍',
     },
@@ -222,7 +223,7 @@ export default function PhotoGridFlipScreen({ onNext }) {
                         display: 'block',
                       }}
                       onError={(e) => {
-                        e.currentTarget.src = '/889038782737162474.jfif';
+                        e.currentTarget.src = item.fallback || '/c 1.jpeg';
                       }}
                     />
                   </div>

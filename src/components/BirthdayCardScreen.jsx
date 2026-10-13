@@ -252,15 +252,16 @@ export default function BirthdayCardScreen({ onNext }) {
             }}
           >
             <img
-              src="/avatar.jpg"
-              alt="Birthday Boy"
+              src="/c 4.jpeg"
+              alt="Simone"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
+                objectPosition: 'center 20%',
               }}
               onError={(e) => {
-                e.currentTarget.src = '/889038782737162474.jfif';
+                e.currentTarget.src = '/c 1.jpeg';
               }}
             />
           </div>
