@@ -46,7 +46,7 @@ export default function FaceIdScreen({ onComplete }) {
 
     // 4. Timeline for biometric verification progression
     const timer1 = setTimeout(() => {
-      setStatusText('Memverifikasi Identitas: Desy Eirlea Driselle...');
+      setStatusText('Memverifikasi Identitas: Amore...');
     }, 1200);
 
     const timer2 = setTimeout(() => {
@@ -63,7 +63,7 @@ export default function FaceIdScreen({ onComplete }) {
       // Photo and box success glow
       gsap.to(scanBoxRef.current, {
         borderColor: '#10b981',
-        boxShadow: '0 0 35px rgba(16, 185, 129, 0.4), inset 0 0 20px rgba(16, 185, 129, 0.2)',
+        boxShadow: '0 0 35px rgba(16, 185, 129, 0.5), inset 0 0 20px rgba(16, 185, 129, 0.2)',
         duration: 0.4,
       });
 
@@ -93,7 +93,7 @@ export default function FaceIdScreen({ onComplete }) {
         position: 'absolute',
         inset: 0,
         zIndex: 100,
-        background: 'radial-gradient(circle at 50% 35%, #ffffff 0%, #fff0f5 55%, #fce7f3 100%)',
+        background: 'radial-gradient(circle at 50% 35%, #0d1b2a 0%, #0a1128 55%, #050814 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -111,15 +111,15 @@ export default function FaceIdScreen({ onComplete }) {
           alignItems: 'center',
           gap: '8px',
           padding: '6px 18px',
-          background: 'rgba(255, 255, 255, 0.85)',
-          border: '1px solid rgba(255, 182, 193, 0.6)',
+          background: 'rgba(15, 23, 42, 0.85)',
+          border: '1px solid rgba(56, 189, 248, 0.4)',
           borderRadius: '20px',
-          boxShadow: '0 4px 15px rgba(255, 143, 163, 0.2)',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.15)',
           marginBottom: '28px',
         }}
       >
-        <Scan size={16} color="#ff758f" />
-        <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#33222a', letterSpacing: '0.5px' }}>
+        <Scan size={16} color="#38bdf8" />
+        <span style={{ fontSize: '0.85rem', fontWeight: '600', color: '#f8fafc', letterSpacing: '0.5px' }}>
           Apple Face ID Security
         </span>
       </div>
@@ -132,12 +132,12 @@ export default function FaceIdScreen({ onComplete }) {
           width: '200px',
           height: '200px',
           borderRadius: '40px',
-          background: 'rgba(255, 255, 255, 0.8)',
-          backdropFilter: 'blur(10px)',
-          border: scanState === 'verified' ? '2px solid #10b981' : '2px solid rgba(255, 117, 143, 0.6)',
+          background: 'rgba(13, 23, 44, 0.85)',
+          backdropFilter: 'blur(12px)',
+          border: scanState === 'verified' ? '2px solid #10b981' : '2px solid rgba(56, 189, 248, 0.6)',
           boxShadow: scanState === 'verified'
-            ? '0 15px 40px rgba(16, 185, 129, 0.35)'
-            : '0 15px 40px rgba(255, 143, 163, 0.25)',
+            ? '0 15px 40px rgba(16, 185, 129, 0.4)'
+            : '0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.2)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -155,8 +155,8 @@ export default function FaceIdScreen({ onComplete }) {
             left: '12px',
             width: '22px',
             height: '22px',
-            borderTop: '3px solid #ff4d6d',
-            borderLeft: '3px solid #ff4d6d',
+            borderTop: '3px solid #38bdf8',
+            borderLeft: '3px solid #38bdf8',
             borderTopLeftRadius: '12px',
             pointerEvents: 'none',
           }}
@@ -169,8 +169,8 @@ export default function FaceIdScreen({ onComplete }) {
             right: '12px',
             width: '22px',
             height: '22px',
-            borderTop: '3px solid #ff4d6d',
-            borderRight: '3px solid #ff4d6d',
+            borderTop: '3px solid #38bdf8',
+            borderRight: '3px solid #38bdf8',
             borderTopRightRadius: '12px',
             pointerEvents: 'none',
           }}
@@ -183,8 +183,8 @@ export default function FaceIdScreen({ onComplete }) {
             left: '12px',
             width: '22px',
             height: '22px',
-            borderBottom: '3px solid #ff4d6d',
-            borderLeft: '3px solid #ff4d6d',
+            borderBottom: '3px solid #38bdf8',
+            borderLeft: '3px solid #38bdf8',
             borderBottomLeftRadius: '12px',
             pointerEvents: 'none',
           }}
@@ -197,14 +197,14 @@ export default function FaceIdScreen({ onComplete }) {
             right: '12px',
             width: '22px',
             height: '22px',
-            borderBottom: '3px solid #ff4d6d',
-            borderRight: '3px solid #ff4d6d',
+            borderBottom: '3px solid #38bdf8',
+            borderRight: '3px solid #38bdf8',
             borderBottomRightRadius: '12px',
             pointerEvents: 'none',
           }}
         />
 
-        {/* Center Target: Desy's Photo */}
+        {/* Center Target: Avatar Photo */}
         <div
           ref={photoRef}
           style={{
@@ -213,18 +213,21 @@ export default function FaceIdScreen({ onComplete }) {
             height: '135px',
             borderRadius: '50%',
             overflow: 'hidden',
-            border: '2px solid rgba(255, 182, 193, 0.8)',
-            boxShadow: '0 6px 18px rgba(0,0,0,0.08)',
+            border: '2px solid rgba(56, 189, 248, 0.7)',
+            boxShadow: '0 6px 18px rgba(0,0,0,0.5)',
           }}
         >
           <img
-            src="/luc 1.jpeg"
-            alt="Desy Eirlea Driselle Face ID"
+            src="/avatar.jpg"
+            alt="Face ID Profile"
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
               filter: scanState === 'verified' ? 'none' : 'contrast(1.05)',
+            }}
+            onError={(e) => {
+              e.currentTarget.src = '/889038782737162474.jfif';
             }}
           />
 
@@ -234,7 +237,7 @@ export default function FaceIdScreen({ onComplete }) {
               style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'radial-gradient(circle, transparent 40%, rgba(255, 77, 109, 0.25) 100%)',
+                background: 'radial-gradient(circle, transparent 40%, rgba(56, 189, 248, 0.25) 100%)',
                 mixBlendMode: 'overlay',
               }}
             />
@@ -250,8 +253,8 @@ export default function FaceIdScreen({ onComplete }) {
               left: '15px',
               right: '15px',
               height: '2.5px',
-              background: 'linear-gradient(90deg, transparent, #ff4d6d, #ff758f, #ff4d6d, transparent)',
-              boxShadow: '0 0 12px #ff4d6d, 0 0 20px rgba(255, 77, 109, 0.8)',
+              background: 'linear-gradient(90deg, transparent, #38bdf8, #60a5fa, #38bdf8, transparent)',
+              boxShadow: '0 0 12px #38bdf8, 0 0 20px rgba(56, 189, 248, 0.8)',
               borderRadius: '2px',
               pointerEvents: 'none',
               zIndex: 10,
@@ -266,7 +269,7 @@ export default function FaceIdScreen({ onComplete }) {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'rgba(255, 255, 255, 0.75)',
+              background: 'rgba(10, 18, 38, 0.75)',
               backdropFilter: 'blur(4px)',
               display: 'flex',
               alignItems: 'center',
@@ -283,7 +286,7 @@ export default function FaceIdScreen({ onComplete }) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 8px 24px rgba(16, 185, 129, 0.45)',
+                boxShadow: '0 8px 24px rgba(16, 185, 129, 0.5)',
               }}
             >
               <Check size={36} color="#ffffff" strokeWidth={3} />
@@ -299,7 +302,7 @@ export default function FaceIdScreen({ onComplete }) {
             fontSize: '1.25rem',
             fontWeight: '700',
             fontFamily: 'var(--font-display)',
-            color: scanState === 'verified' ? '#059669' : '#33222a',
+            color: scanState === 'verified' ? '#10b981' : '#f8fafc',
             marginBottom: '6px',
             transition: 'color 0.3s ease',
           }}
@@ -309,12 +312,12 @@ export default function FaceIdScreen({ onComplete }) {
         <p
           style={{
             fontSize: '0.85rem',
-            color: '#806b74',
+            color: '#94a3b8',
             fontFamily: 'var(--font-body)',
           }}
         >
           {scanState === 'verified'
-            ? 'Akses Diberikan untuk Desy Eirlea Driselle 🤍'
+            ? 'Akses Diberikan untuk Amore 🤍'
             : 'Posisikan wajah di dalam bingkai'}
         </p>
       </div>

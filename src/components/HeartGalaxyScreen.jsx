@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import confetti from 'canvas-confetti';
-import { Heart, Sparkles, Music, ArrowRight } from 'lucide-react';
+import { Sparkles, Music, ArrowRight } from 'lucide-react';
 
 export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
   const containerRef = useRef(null);
@@ -23,19 +23,17 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
     duration: Math.random() * 3 + 1.5,
     delay: Math.random() * 2.5,
     opacity: Math.random() * 0.7 + 0.3,
-    color: i % 3 === 0 ? '#ffccd5' : i % 3 === 1 ? '#ffffff' : '#fce7f3',
+    color: i % 3 === 0 ? '#7dd3fc' : i % 3 === 1 ? '#ffffff' : '#bae6fd',
   }));
 
   // 2. Curving Galactic Arm Stardust (Points along the spiral)
   const spiralParticles = Array.from({ length: 45 }).map((_, i) => {
-    // Elliptical spiral formula
     const t = (i / 45) * Math.PI * 2.2 - 0.4;
-    const a = 145; // x radius
-    const b = 65;  // y radius
-    const tilt = -0.32; // tilt angle in radians
+    const a = 145;
+    const b = 65;
+    const tilt = -0.32;
     const x0 = Math.cos(t) * a;
     const y0 = Math.sin(t) * b;
-    // Rotate by tilt
     const x = x0 * Math.cos(tilt) - y0 * Math.sin(tilt) + 160;
     const y = x0 * Math.sin(tilt) + y0 * Math.cos(tilt) + 140;
     return {
@@ -48,7 +46,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
   });
 
   useGSAP(() => {
-    // Entrance animations
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
     tl.fromTo('.galaxy-header',
@@ -81,7 +78,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
       '-=0.2'
     );
 
-    // Continuous heartbeat pulse
     if (heartRef.current) {
       gsap.to(heartRef.current, {
         scale: 1.12,
@@ -92,7 +88,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
       });
     }
 
-    // Expanding soundwave aura rings
     if (ripple1Ref.current) {
       gsap.to(ripple1Ref.current, {
         scale: 2.2,
@@ -114,7 +109,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
       });
     }
 
-    // Glowing stars soft floating and sparkling
     gsap.to('.celestial-star', {
       scale: 1.2,
       rotation: '+=15',
@@ -125,7 +119,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
       stagger: 0.3,
     });
 
-    // Quotes gentle drift
     gsap.to('.orbit-quote', {
       y: '+=5',
       duration: 2.5,
@@ -141,20 +134,17 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
       setHasTapped(true);
       if (onPlayMusic) onPlayMusic();
 
-      // Confetti burst of sparkling stars & hearts
       confetti({
         particleCount: 50,
         spread: 80,
         origin: { y: 0.5 },
-        colors: ['#ff758f', '#ffffff', '#ffccd5', '#ffd700', '#ff4d6d'],
+        colors: ['#38bdf8', '#ffffff', '#60a5fa', '#3b82f6', '#1d4ed8'],
       });
 
-      // Quick heart beat thump
       gsap.timeline()
         .to(heartRef.current, { scale: 1.35, duration: 0.15, ease: 'back.out(2)' })
         .to(heartRef.current, { scale: 1.12, duration: 0.3 });
 
-      // Pop in the continue button
       requestAnimationFrame(() => {
         gsap.fromTo(buttonRef.current,
           { opacity: 0, y: 25, scale: 0.8 },
@@ -183,7 +173,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
         position: 'absolute',
         inset: 0,
         zIndex: 100,
-        background: 'radial-gradient(ellipse at 50% 45%, #0c0812 0%, #050308 55%, #020104 100%)',
+        background: 'radial-gradient(ellipse at 50% 45%, #081124 0%, #040814 55%, #02040a 100%)',
         color: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
@@ -217,13 +207,13 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
         ))}
       </div>
 
-      {/* TOP HEADER (Matching Reference Video Exact Wording) */}
+      {/* TOP HEADER */}
       <div className="galaxy-header" style={{ textAlign: 'center', zIndex: 10, marginTop: '8px' }}>
         <p
           style={{
             fontSize: '0.74rem',
             letterSpacing: '3.5px',
-            color: 'rgba(255, 204, 213, 0.85)',
+            color: 'rgba(56, 189, 248, 0.85)',
             textTransform: 'uppercase',
             marginBottom: '6px',
             fontFamily: 'var(--font-body)',
@@ -240,21 +230,21 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             fontWeight: '700',
             color: '#ffffff',
             letterSpacing: '0.5px',
-            textShadow: '0 0 20px rgba(255, 117, 143, 0.7), 0 0 35px rgba(255, 77, 109, 0.4)',
+            textShadow: '0 0 20px rgba(56, 189, 248, 0.7), 0 0 35px rgba(37, 99, 235, 0.4)',
             marginBottom: '4px',
             lineHeight: '1.2',
           }}
         >
-          Untuk DESY EIRLEA DRISELLE
+          Untuk AMORE
         </h2>
 
         <p
           style={{
             fontFamily: 'var(--font-handwriting)',
             fontSize: '1.35rem',
-            color: '#ff85a2',
+            color: '#38bdf8',
             letterSpacing: '0.5px',
-            textShadow: '0 0 10px rgba(255, 133, 162, 0.6)',
+            textShadow: '0 0 10px rgba(56, 189, 248, 0.6)',
           }}
         >
           Spesial Untukmu Sayang 🤍
@@ -290,8 +280,8 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
         >
           <defs>
             <radialGradient id="nebulaGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#ff4d6d" stopOpacity="0.4" />
-              <stop offset="50%" stopColor="#ff758f" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#1e3a8a" stopOpacity="0.15" />
               <stop offset="100%" stopColor="#000000" stopOpacity="0" />
             </radialGradient>
           </defs>
@@ -306,9 +296,9 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
               cx={p.cx}
               cy={p.cy}
               r={p.r}
-              fill={p.id % 2 === 0 ? '#ffffff' : '#ffd1dc'}
+              fill={p.id % 2 === 0 ? '#ffffff' : '#7dd3fc'}
               opacity={p.opacity}
-              filter="drop-shadow(0 0 3px #ff758f)"
+              filter="drop-shadow(0 0 3px #38bdf8)"
             />
           ))}
         </svg>
@@ -321,7 +311,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             width: '110px',
             height: '110px',
             borderRadius: '50%',
-            border: '2px solid rgba(255, 117, 143, 0.75)',
+            border: '2px solid rgba(56, 189, 248, 0.75)',
             pointerEvents: 'none',
             zIndex: 3,
           }}
@@ -333,7 +323,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             width: '110px',
             height: '110px',
             borderRadius: '50%',
-            border: '1.5px solid rgba(255, 182, 193, 0.5)',
+            border: '1.5px solid rgba(96, 165, 250, 0.5)',
             pointerEvents: 'none',
             zIndex: 3,
           }}
@@ -347,14 +337,14 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             width: '160px',
             height: '160px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(255, 77, 109, 0.7) 0%, rgba(255, 143, 163, 0.35) 45%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(56, 189, 248, 0.7) 0%, rgba(30, 58, 138, 0.35) 45%, transparent 70%)',
             filter: 'blur(30px)',
             pointerEvents: 'none',
             zIndex: 4,
           }}
         />
 
-        {/* 1. Upper-Left Floating Glowing Heart (Like Reference Video) */}
+        {/* Floating Glowing Accents in Orbit */}
         <div
           className="celestial-star"
           style={{
@@ -363,14 +353,13 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             left: '38px',
             zIndex: 8,
             fontSize: '1.3rem',
-            filter: 'drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 18px #ff758f)',
+            filter: 'drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 18px #38bdf8)',
             pointerEvents: 'none',
           }}
         >
-          🤍
+          💙
         </div>
 
-        {/* 2. Lower-Left Big 6-Pointed Twinkling Star (Like Reference Video) */}
         <div
           className="celestial-star"
           style={{
@@ -378,7 +367,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             bottom: '48px',
             left: '60px',
             zIndex: 8,
-            filter: 'drop-shadow(0 0 14px #ffffff) drop-shadow(0 0 24px #ff758f)',
+            filter: 'drop-shadow(0 0 14px #ffffff) drop-shadow(0 0 24px #38bdf8)',
             pointerEvents: 'none',
           }}
         >
@@ -387,7 +376,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           </svg>
         </div>
 
-        {/* 3. Lower-Right Big 6-Pointed Twinkling Star (Like Reference Video) */}
         <div
           className="celestial-star"
           style={{
@@ -395,7 +383,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             bottom: '40px',
             right: '55px',
             zIndex: 8,
-            filter: 'drop-shadow(0 0 14px #ffffff) drop-shadow(0 0 24px #ff758f)',
+            filter: 'drop-shadow(0 0 14px #ffffff) drop-shadow(0 0 24px #38bdf8)',
             pointerEvents: 'none',
           }}
         >
@@ -404,7 +392,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           </svg>
         </div>
 
-        {/* 4. Upper-Right Mini Celestial Star */}
         <div
           className="celestial-star"
           style={{
@@ -412,7 +399,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             top: '48px',
             right: '65px',
             zIndex: 8,
-            filter: 'drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 18px #ff758f)',
+            filter: 'drop-shadow(0 0 10px #ffffff) drop-shadow(0 0 18px #38bdf8)',
             pointerEvents: 'none',
           }}
         >
@@ -421,7 +408,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           </svg>
         </div>
 
-        {/* 5. Far-Right Floating Mini Heart in Orbit */}
         <div
           className="celestial-star"
           style={{
@@ -430,15 +416,14 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             right: '18px',
             zIndex: 8,
             fontSize: '1.1rem',
-            filter: 'drop-shadow(0 0 10px #ffccd5)',
+            filter: 'drop-shadow(0 0 10px #7dd3fc)',
             pointerEvents: 'none',
           }}
         >
           🤍
         </div>
 
-        {/* ORBITING ROMANTIC PHRASES (Carefully Arranged Along the Orbit Curve) */}
-        {/* Quote 1: Top Right */}
+        {/* ORBITING ROMANTIC PHRASES */}
         <div
           className="orbit-quote"
           style={{
@@ -447,8 +432,8 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             right: '15px',
             fontFamily: 'var(--font-handwriting)',
             fontSize: '1.08rem',
-            color: '#fff5f7',
-            textShadow: '0 0 12px rgba(255, 117, 143, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
+            color: '#f0f9ff',
+            textShadow: '0 0 12px rgba(56, 189, 248, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
             pointerEvents: 'none',
             zIndex: 9,
             whiteSpace: 'nowrap',
@@ -457,7 +442,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           ✦ Tiap bintang mengingatkanku padamu
         </div>
 
-        {/* Quote 2: Mid-Left */}
         <div
           className="orbit-quote"
           style={{
@@ -466,8 +450,8 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             left: '2px',
             fontFamily: 'var(--font-handwriting)',
             fontSize: '1.08rem',
-            color: '#fff5f7',
-            textShadow: '0 0 12px rgba(255, 117, 143, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
+            color: '#f0f9ff',
+            textShadow: '0 0 12px rgba(56, 189, 248, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
             pointerEvents: 'none',
             zIndex: 9,
             whiteSpace: 'nowrap',
@@ -476,7 +460,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           ✦ Kamu pusat dari segalanya
         </div>
 
-        {/* Quote 3: Bottom-Left */}
         <div
           className="orbit-quote"
           style={{
@@ -485,8 +468,8 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             left: '8px',
             fontFamily: 'var(--font-handwriting)',
             fontSize: '1.08rem',
-            color: '#fff5f7',
-            textShadow: '0 0 12px rgba(255, 117, 143, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
+            color: '#f0f9ff',
+            textShadow: '0 0 12px rgba(56, 189, 248, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
             pointerEvents: 'none',
             zIndex: 9,
             whiteSpace: 'nowrap',
@@ -495,7 +478,6 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           ✦ Diantara jutaan, aku memilihmu
         </div>
 
-        {/* Quote 4: Bottom-Right */}
         <div
           className="orbit-quote"
           style={{
@@ -504,8 +486,8 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             right: '6px',
             fontFamily: 'var(--font-handwriting)',
             fontSize: '1.08rem',
-            color: '#fff5f7',
-            textShadow: '0 0 12px rgba(255, 117, 143, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
+            color: '#f0f9ff',
+            textShadow: '0 0 12px rgba(56, 189, 248, 0.9), 0 2px 4px rgba(0,0,0,0.9)',
             pointerEvents: 'none',
             zIndex: 9,
             whiteSpace: 'nowrap',
@@ -514,7 +496,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
           ✦ Kamu, seluruh semestaku
         </div>
 
-        {/* CENTER 3D RADIANT GLOWING HEART */}
+        {/* CENTER 3D RADIANT GLOWING HEART IN SAPPHIRE BLUE */}
         <div
           ref={heartRef}
           style={{
@@ -523,19 +505,18 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            filter: 'drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 45px #ff4d6d)',
+            filter: 'drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 45px #38bdf8)',
             cursor: 'pointer',
           }}
         >
           <svg viewBox="0 0 200 200" width="130" height="130">
             <defs>
-              {/* Vibrant Radiant Core Gradient (Hot White Core to Soft Blush) */}
               <radialGradient id="centerGlowHeart" cx="45%" cy="38%" r="62%">
                 <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="30%" stopColor="#ffe4ea" />
-                <stop offset="65%" stopColor="#ff758f" />
-                <stop offset="88%" stopColor="#ff4d6d" />
-                <stop offset="100%" stopColor="#c9184a" />
+                <stop offset="25%" stopColor="#e0f2fe" />
+                <stop offset="55%" stopColor="#38bdf8" />
+                <stop offset="80%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#1e3a8a" />
               </radialGradient>
             </defs>
 
@@ -560,7 +541,7 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
               style={{
                 fontFamily: 'var(--font-handwriting)',
                 fontSize: '1.4rem',
-                color: '#ff85a2',
+                color: '#38bdf8',
                 letterSpacing: '0.8px',
                 animation: 'pulseGlow 1.5s infinite alternate',
                 display: 'inline-flex',
@@ -581,27 +562,27 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
                 alignItems: 'center',
                 gap: '8px',
                 padding: '5px 16px',
-                background: 'rgba(255, 117, 143, 0.15)',
-                border: '1px solid rgba(255, 182, 193, 0.4)',
+                background: 'rgba(30, 58, 138, 0.35)',
+                border: '1px solid rgba(56, 189, 248, 0.4)',
                 borderRadius: '20px',
-                color: '#ffccd5',
+                color: '#bae6fd',
                 fontSize: '0.82rem',
                 marginBottom: '14px',
-                boxShadow: '0 0 15px rgba(255, 117, 143, 0.25)',
+                boxShadow: '0 0 15px rgba(56, 189, 248, 0.25)',
               }}
             >
               <Music size={14} className="animate-spin" />
               <span>Lagu diputar spesial untukmu 🎵</span>
             </div>
 
-            {/* Glowing CTA Button */}
+            {/* Glowing Navy CTA Button */}
             <button
               onClick={handleEnterScrapbook}
               style={{
                 width: '100%',
-                background: 'linear-gradient(135deg, #ff758f 0%, #ff4d6d 50%, #c9184a 100%)',
+                background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #0f172a 100%)',
                 color: '#ffffff',
-                border: '1.5px solid rgba(255, 255, 255, 0.7)',
+                border: '1.5px solid rgba(56, 189, 248, 0.7)',
                 padding: '14px 24px',
                 borderRadius: '30px',
                 fontSize: '0.98rem',
@@ -612,16 +593,16 @@ export default function HeartGalaxyScreen({ onContinue, onPlayMusic }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                boxShadow: '0 8px 30px rgba(255, 77, 109, 0.6), 0 0 25px rgba(255, 117, 143, 0.5)',
+                boxShadow: '0 8px 30px rgba(37, 99, 235, 0.6), 0 0 25px rgba(56, 189, 248, 0.4)',
                 transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.04)';
-                e.currentTarget.style.boxShadow = '0 10px 35px rgba(255, 77, 109, 0.8), 0 0 35px rgba(255, 143, 163, 0.7)';
+                e.currentTarget.style.boxShadow = '0 10px 35px rgba(37, 99, 235, 0.8), 0 0 35px rgba(56, 189, 248, 0.6)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 8px 30px rgba(255, 77, 109, 0.6), 0 0 25px rgba(255, 117, 143, 0.5)';
+                e.currentTarget.style.boxShadow = '0 8px 30px rgba(37, 99, 235, 0.6), 0 0 25px rgba(56, 189, 248, 0.4)';
               }}
             >
               <span>Buka Buku Scrapbook Kenangan 📖</span>

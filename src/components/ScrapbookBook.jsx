@@ -556,7 +556,7 @@ export default function ScrapbookBook({
         height: '100%',
         maxHeight: '100%',
         position: 'relative',
-        background: 'radial-gradient(ellipse at 50% 30%, #fff7f9 0%, #fae6ec 55%, #f4d0dc 100%)',
+        background: 'radial-gradient(ellipse at 50% 30%, #0d1b2a 0%, #091124 55%, #040814 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -586,41 +586,41 @@ export default function ScrapbookBook({
         <button
           onClick={onGoToGalaxy}
           style={{
-            background: 'rgba(255, 255, 255, 0.9)',
-            border: '1.5px solid #ffccd5',
+            background: 'rgba(15, 23, 42, 0.85)',
+            border: '1.5px solid rgba(56, 189, 248, 0.35)',
             borderRadius: '20px',
             padding: '5px 12px',
             fontSize: '0.78rem',
             fontWeight: '600',
-            color: '#b05d6f',
+            color: '#38bdf8',
             display: 'flex',
             alignItems: 'center',
             gap: '5px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(255, 117, 143, 0.15)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
           }}
         >
-          <span>🌌</span>
-          <span>Semesta Hati</span>
+          <span>💌</span>
+          <span>Amplop Surat</span>
         </button>
 
         {/* Page Counter Badge */}
         <div
           style={{
-            background: 'rgba(255, 255, 255, 0.92)',
-            border: '1.5px solid #ffccd5',
+            background: 'rgba(15, 23, 42, 0.85)',
+            border: '1.5px solid rgba(56, 189, 248, 0.35)',
             borderRadius: '16px',
             padding: '5px 12px',
             fontSize: '0.78rem',
             fontWeight: '700',
-            color: '#ff4d6d',
+            color: '#38bdf8',
             display: 'flex',
             alignItems: 'center',
             gap: '5px',
-            boxShadow: '0 2px 8px rgba(255, 117, 143, 0.15)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
           }}
         >
-          <BookOpen size={14} color="#ff4d6d" />
+          <BookOpen size={14} color="#38bdf8" />
           <span>{pageNames[currentPage].label} ({currentPage + 1}/{totalPages})</span>
         </div>
 
@@ -632,15 +632,15 @@ export default function ScrapbookBook({
             height: '34px',
             borderRadius: '50%',
             background: isPlaying
-              ? 'linear-gradient(135deg, #ff758f 0%, #ff4d6d 100%)'
-              : 'rgba(255, 255, 255, 0.9)',
-            border: '1.5px solid #ffccd5',
-            color: isPlaying ? '#ffffff' : '#b05d6f',
+              ? 'linear-gradient(135deg, #2563eb 0%, #38bdf8 100%)'
+              : 'rgba(15, 23, 42, 0.85)',
+            border: '1.5px solid rgba(56, 189, 248, 0.35)',
+            color: isPlaying ? '#ffffff' : '#38bdf8',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(255, 117, 143, 0.2)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
           }}
         >
           {isPlaying ? <Volume2 size={16} /> : <VolumeX size={16} />}
@@ -703,9 +703,9 @@ export default function ScrapbookBook({
             bottom: '4px',
             left: '20px',
             right: '4px',
-            background: '#f7d6e0',
+            background: '#091124',
             borderRadius: '16px',
-            boxShadow: '0 15px 35px rgba(180, 70, 95, 0.2)',
+            boxShadow: '0 15px 35px rgba(0, 0, 0, 0.7)',
             transform: 'rotate(0.8deg)',
             zIndex: 2,
           }}
@@ -717,9 +717,9 @@ export default function ScrapbookBook({
             bottom: '2px',
             left: '16px',
             right: '6px',
-            background: '#fff0f3',
+            background: '#0b162c',
             borderRadius: '16px',
-            boxShadow: '0 10px 25px rgba(180, 70, 95, 0.15)',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.6)',
             transform: 'rotate(-0.5deg)',
             zIndex: 3,
           }}
@@ -736,12 +736,12 @@ export default function ScrapbookBook({
             maxHeight: '100%',
             marginLeft: '12px',
             background: currentPage === 0
-              ? 'linear-gradient(145deg, #ff85a2 0%, #ff5c7a 50%, #d43d5e 100%)'
-              : '#fffefc',
-            color: currentPage === 0 ? '#ffffff' : '#2e1c24',
+              ? 'linear-gradient(145deg, #0b1528 0%, #070e1c 50%, #030712 100%)'
+              : '#0d172a',
+            color: '#f8fafc',
             borderRadius: '14px',
-            boxShadow: '0 10px 30px rgba(255, 117, 143, 0.2), inset 12px 0 16px rgba(0,0,0,0.03)',
-            border: currentPage === 0 ? '3px double #ffd1dc' : '1px solid #f3d7e0',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.8), inset 12px 0 16px rgba(0,0,0,0.4)',
+            border: currentPage === 0 ? '3px double rgba(56, 189, 248, 0.5)' : '1px solid rgba(56, 189, 248, 0.25)',
             position: 'relative',
             zIndex: 10,
             overflowY: 'auto',
@@ -753,7 +753,7 @@ export default function ScrapbookBook({
             boxSizing: 'border-box',
             transformStyle: 'preserve-3d',
             scrollbarWidth: 'thin',
-            scrollbarColor: '#ffccd5 transparent',
+            scrollbarColor: '#38bdf8 transparent',
           }}
         >
           {/* Dynamic Shadow Overlay during 3D flip */}
@@ -786,24 +786,24 @@ export default function ScrapbookBook({
                 position: 'relative',
               }}
             >
-              <div style={{ position: 'absolute', top: '4px', left: '4px', fontSize: '1.1rem', opacity: 0.8 }}>🌸</div>
-              <div style={{ position: 'absolute', top: '4px', right: '4px', fontSize: '1.1rem', opacity: 0.8 }}>✨</div>
+              <div style={{ position: 'absolute', top: '4px', left: '4px', fontSize: '1.1rem', opacity: 0.8 }}>✨</div>
+              <div style={{ position: 'absolute', top: '4px', right: '4px', fontSize: '1.1rem', opacity: 0.8 }}>💙</div>
               <div style={{ position: 'absolute', bottom: '4px', left: '4px', fontSize: '1.1rem', opacity: 0.8 }}>🤍</div>
-              <div style={{ position: 'absolute', bottom: '4px', right: '4px', fontSize: '1.1rem', opacity: 0.8 }}>🌸</div>
+              <div style={{ position: 'absolute', bottom: '4px', right: '4px', fontSize: '1.1rem', opacity: 0.8 }}>✨</div>
 
               <div
                 style={{
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  background: 'radial-gradient(circle, #ffe4a0 0%, #d4a034 70%, #9e7215 100%)',
-                  boxShadow: '0 4px 12px rgba(212, 160, 52, 0.4), inset 0 2px 4px #ffffff',
+                  background: 'radial-gradient(circle, #38bdf8 0%, #2563eb 70%, #1e3a8a 100%)',
+                  boxShadow: '0 4px 14px rgba(56, 189, 248, 0.4), inset 0 2px 4px #ffffff',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: '1.5rem',
                   marginBottom: '12px',
-                  border: '2px solid #ffffff',
+                  border: '2px solid rgba(255, 255, 255, 0.8)',
                 }}
               >
                 🎀
@@ -811,12 +811,12 @@ export default function ScrapbookBook({
 
               <div
                 style={{
-                  border: '2px double rgba(255, 255, 255, 0.85)',
+                  border: '2px double rgba(56, 189, 248, 0.6)',
                   borderRadius: '14px',
                   padding: '18px 12px',
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  backdropFilter: 'blur(3px)',
-                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
+                  background: 'rgba(15, 23, 42, 0.55)',
+                  backdropFilter: 'blur(5px)',
+                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)',
                   width: '100%',
                   maxWidth: '290px',
                   marginBottom: '16px',
@@ -828,7 +828,7 @@ export default function ScrapbookBook({
                     fontSize: '0.68rem',
                     letterSpacing: '2.5px',
                     textTransform: 'uppercase',
-                    color: '#ffe5ec',
+                    color: '#38bdf8',
                     fontWeight: '700',
                     marginBottom: '6px',
                   }}
@@ -843,18 +843,18 @@ export default function ScrapbookBook({
                     fontWeight: '700',
                     lineHeight: '1.25',
                     color: '#ffffff',
-                    textShadow: '0 2px 10px rgba(0,0,0,0.25)',
+                    textShadow: '0 2px 10px rgba(0,0,0,0.5)',
                     marginBottom: '6px',
                   }}
                 >
-                  Desy's Memory Book
+                  Amore's Memory Book
                 </h1>
 
                 <div
                   style={{
                     height: '2px',
                     width: '50px',
-                    background: '#ffe5ec',
+                    background: '#38bdf8',
                     margin: '6px auto 8px',
                     borderRadius: '2px',
                   }}
@@ -864,18 +864,18 @@ export default function ScrapbookBook({
                   style={{
                     fontFamily: 'var(--font-handwriting)',
                     fontSize: '1.3rem',
-                    color: '#fff0f3',
+                    color: '#e0f2fe',
                     marginBottom: '4px',
                   }}
                 >
-                  Untuk Desy Eirlea Driselle 🤍
+                  Untuk Amore 🤍
                 </p>
 
                 <p
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.74rem',
-                    color: '#ffe5ec',
+                    color: '#94a3b8',
                     fontStyle: 'italic',
                   }}
                 >
@@ -886,9 +886,9 @@ export default function ScrapbookBook({
               <button
                 onClick={handleNextPage}
                 style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #fff0f5 100%)',
-                  color: '#c9184a',
-                  border: '2px solid #ffffff',
+                  background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                  color: '#ffffff',
+                  border: '1.5px solid rgba(56, 189, 248, 0.7)',
                   borderRadius: '28px',
                   padding: '11px 24px',
                   fontSize: '0.9rem',
@@ -897,12 +897,12 @@ export default function ScrapbookBook({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px',
-                  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.25)',
+                  boxShadow: '0 6px 20px rgba(37, 99, 235, 0.45)',
                   animation: 'pulseGlow 2s infinite alternate',
                 }}
               >
                 <span>Buka Halaman Pertama 📖</span>
-                <Sparkles size={15} color="#c9184a" />
+                <Sparkles size={15} color="#38bdf8" />
               </button>
             </div>
           )}
@@ -1232,7 +1232,7 @@ export default function ScrapbookBook({
                   PAMERAN 03
                 </p>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.12rem', color: '#2e1c24', margin: '0 0 2px 0' }}>
-                  5 Potret Kenangan Desy Eirlea Driselle
+                  5 Potret Kenangan Bersamamu
                 </h3>
                 <p style={{ fontSize: '0.68rem', color: '#8c6571', margin: 0, fontStyle: 'italic' }}>
                   Ketuk foto untuk memperbesar (zoom) 🔍
@@ -1749,7 +1749,7 @@ export default function ScrapbookBook({
                       Lagu Spesial Untukmu 🎵
                     </p>
                     <p style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.7)', margin: '0 0 4px 0' }}>
-                      Our Favorite Song · Special for Desy 🤍
+                      Our Favorite Song · Special for Amore 🤍
                     </p>
 
                     <div style={{ display: 'flex', alignItems: 'flex-end', gap: '2px', height: '12px' }}>
@@ -2233,7 +2233,7 @@ export default function ScrapbookBook({
                   APRESIASI
                 </p>
                 <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', color: '#2e1c24', margin: '0 0 4px 0', fontStyle: 'italic' }}>
-                  Thank You for Staying untuk Desy...
+                  Thank You for Staying untuk Amore...
                 </h4>
                 <p style={{ fontSize: '0.78rem', color: '#8c6571', margin: '0 0 8px 0' }}>
                   Terima kasih karena tetap ada dan menemani perjalananku.
@@ -2380,18 +2380,18 @@ export default function ScrapbookBook({
           onClick={handlePrevPage}
           disabled={currentPage === 0 || isFlipping}
           style={{
-            background: currentPage === 0 ? 'rgba(255,255,255,0.4)' : '#ffffff',
-            border: '1.5px solid #ffccd5',
+            background: currentPage === 0 ? 'rgba(15, 23, 42, 0.4)' : 'rgba(15, 23, 42, 0.9)',
+            border: '1.5px solid rgba(56, 189, 248, 0.3)',
             borderRadius: '20px',
             padding: '6px 14px',
             fontSize: '0.78rem',
             fontWeight: '600',
-            color: currentPage === 0 ? '#d1b5be' : '#b05d6f',
+            color: currentPage === 0 ? '#475569' : '#38bdf8',
             display: 'flex',
             alignItems: 'center',
             gap: '4px',
             cursor: currentPage === 0 ? 'not-allowed' : 'pointer',
-            boxShadow: '0 2px 8px rgba(255, 117, 143, 0.15)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
           }}
         >
           <ChevronLeft size={15} />
@@ -2409,7 +2409,8 @@ export default function ScrapbookBook({
                 width: currentPage === idx ? '18px' : '6px',
                 height: '6px',
                 borderRadius: '3px',
-                background: currentPage === idx ? '#ff4d6d' : '#ffd1dc',
+                background: currentPage === idx ? '#38bdf8' : 'rgba(56, 189, 248, 0.25)',
+                boxShadow: currentPage === idx ? '0 0 10px #38bdf8' : 'none',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
               }}
@@ -2423,9 +2424,9 @@ export default function ScrapbookBook({
           disabled={currentPage === totalPages - 1 || isFlipping}
           style={{
             background: currentPage === totalPages - 1
-              ? 'rgba(255,255,255,0.4)'
-              : 'linear-gradient(135deg, #ff758f 0%, #ff4d6d 100%)',
-            border: '1.5px solid #ffffff',
+              ? 'rgba(15, 23, 42, 0.4)'
+              : 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+            border: '1.5px solid rgba(56, 189, 248, 0.5)',
             borderRadius: '20px',
             padding: '6px 14px',
             fontSize: '0.78rem',
@@ -2435,7 +2436,7 @@ export default function ScrapbookBook({
             alignItems: 'center',
             gap: '4px',
             cursor: currentPage === totalPages - 1 ? 'not-allowed' : 'pointer',
-            boxShadow: '0 3px 10px rgba(255, 77, 109, 0.3)',
+            boxShadow: '0 3px 10px rgba(37, 99, 235, 0.4)',
           }}
         >
           <span>Selanjutnya</span>
@@ -2579,7 +2580,7 @@ export default function ScrapbookBook({
               MAKE A WISH
             </span>
             <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', color: '#2e1c24', margin: '4px 0 12px 0' }}>
-              Harapan Untuk Desy ✨
+              Harapan Untuk Amore ✨
             </h3>
 
             {/* Cake Graphic */}
