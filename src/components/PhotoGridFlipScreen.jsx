@@ -195,20 +195,19 @@ export default function PhotoGridFlipScreen({ onNext }) {
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                     background: '#ffffff',
-                    padding: '6px 6px 14px 6px',
+                    padding: '6px 6px 20px 6px',
                     borderRadius: '8px',
                     boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.1)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
                   }}
                 >
                   {/* Gambar */}
                   <div
                     style={{
                       width: '100%',
-                      height: '130px',
+                      height: '100%',
                       borderRadius: '4px',
                       overflow: 'hidden',
                       background: '#091329',
@@ -216,7 +215,7 @@ export default function PhotoGridFlipScreen({ onNext }) {
                   >
                     <img
                       src={item.image}
-                      alt={item.title}
+                      alt="Polaroid Memory"
                       style={{
                         width: '100%',
                         height: '100%',
@@ -229,24 +228,6 @@ export default function PhotoGridFlipScreen({ onNext }) {
                       }}
                     />
                   </div>
-
-                  {/* Caption Bawah Polaroid */}
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-handwriting)',
-                      fontSize: '0.98rem',
-                      color: '#0f172a',
-                      fontWeight: '700',
-                      lineHeight: 1.1,
-                      marginTop: '4px',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      maxWidth: '100%',
-                    }}
-                  >
-                    {item.title} 🤍
-                  </span>
                 </div>
 
                 {/* SISI BELAKANG: KATA-KATA ROMANTIS */}
@@ -265,30 +246,18 @@ export default function PhotoGridFlipScreen({ onNext }) {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '12px 9px',
+                    padding: '14px 12px',
                     textAlign: 'center',
                     color: '#ffffff',
                     overflowY: 'auto',
                   }}
                 >
-                  <Heart size={14} color="#38bdf8" fill="#38bdf8" style={{ marginBottom: '4px', flexShrink: 0 }} />
-                  <h4
-                    style={{
-                      fontFamily: 'var(--font-handwriting)',
-                      fontSize: '1.18rem',
-                      color: '#ffffff',
-                      marginBottom: '4px',
-                      lineHeight: 1.1,
-                      flexShrink: 0,
-                    }}
-                  >
-                    {item.title}
-                  </h4>
+                  <Heart size={16} color="#38bdf8" fill="#38bdf8" style={{ marginBottom: '8px', flexShrink: 0 }} />
                   <p
                     style={{
-                      fontSize: item.id === 5 ? '0.88rem' : '0.71rem',
+                      fontSize: item.id === 5 ? '0.96rem' : '0.74rem',
                       color: '#e0f2fe',
-                      lineHeight: 1.35,
+                      lineHeight: 1.38,
                       fontFamily: 'var(--font-body)',
                       margin: 0,
                       fontStyle: 'italic',
