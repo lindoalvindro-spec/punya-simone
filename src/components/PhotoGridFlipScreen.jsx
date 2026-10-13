@@ -29,6 +29,7 @@ export default function PhotoGridFlipScreen({ onNext }) {
     {
       id: 2,
       image: '/c 3.jpeg',
+      objectPosition: 'center 8%',
       title: 'Un Luogo Sicuro',
       quote: 'E se, un giorno, i tuoi passi diventassero più pesanti in questo mondo incerto, spero che tu possa sempre ricordare che ci sarà un luogo per te dove poter deporre ogni affanno che verrà.',
     },
@@ -220,6 +221,7 @@ export default function PhotoGridFlipScreen({ onNext }) {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
+                        objectPosition: item.objectPosition || 'center center',
                         display: 'block',
                       }}
                       onError={(e) => {
