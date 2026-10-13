@@ -58,6 +58,7 @@ export default function ClosingStoryScreen({ onRestart }) {
       {/* Main Closing Card */}
       <div
         ref={cardRef}
+        className="closing-card"
         style={{
           width: '100%',
           maxWidth: '340px',

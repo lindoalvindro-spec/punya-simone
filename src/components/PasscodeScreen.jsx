@@ -195,6 +195,7 @@ export default function PasscodeScreen({ onUnlock }) {
       {/* Main Dark Navy Passcode Glass Card */}
       <div
         ref={cardRef}
+        className="passcode-card"
         style={{
           width: '100%',
           maxWidth: '330px',

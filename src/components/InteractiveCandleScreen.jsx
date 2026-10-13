@@ -115,6 +115,7 @@ export default function InteractiveCandleScreen({ onNext }) {
       {/* Soft Card Container */}
       <div
         ref={cardRef}
+        className="candle-card"
         style={{
           width: '100%',
           maxWidth: '320px',

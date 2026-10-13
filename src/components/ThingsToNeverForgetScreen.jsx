@@ -68,6 +68,7 @@ export default function ThingsToNeverForgetScreen({ onNext }) {
   return (
     <div
       ref={containerRef}
+      className="notes-screen-container"
       style={{
         position: 'absolute',
         inset: 0,
@@ -127,6 +128,7 @@ export default function ThingsToNeverForgetScreen({ onNext }) {
       {/* 2x2 Interactive 3D Flip Card Grid */}
       <div
         ref={gridRef}
+        className="notes-flip-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
@@ -236,6 +238,7 @@ export default function ThingsToNeverForgetScreen({ onNext }) {
       {/* Bottom Card: "Do you know how special you are to me?" */}
       <div
         ref={bottomCardRef}
+        className="notes-bottom-card"
         style={{
           width: '100%',
           maxWidth: '340px',

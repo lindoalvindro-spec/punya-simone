@@ -67,6 +67,7 @@ export default function SpecialWishLetterScreen({ onNext }) {
       {/* Main Letter Card */}
       <div
         ref={cardRef}
+        className="letter-card"
         style={{
           width: '100%',
           maxWidth: '340px',
@@ -136,6 +137,7 @@ export default function SpecialWishLetterScreen({ onNext }) {
         {/* Letter Body Content */}
         <div
           ref={contentRef}
+          className="letter-body-content"
           style={{
             maxHeight: '48vh',
             overflowY: 'auto',

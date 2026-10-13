@@ -99,6 +99,7 @@ export default function PhotoGridFlipScreen({ onNext }) {
   return (
     <div
       ref={containerRef}
+      className="photo-screen-container"
       style={{
         position: 'absolute',
         inset: 0,
@@ -145,9 +146,10 @@ export default function PhotoGridFlipScreen({ onNext }) {
         </p>
       </div>
 
-      {/* 6 Polaroid Photos Grid (2 Kolom x 3 Baris) */}
+      {/* 6 Polaroid Photos Grid (2 Kolom x 3 Baris di HP, 3 Kolom x 2 Baris di MacBook) */}
       <div
         ref={gridRef}
+        className="photo-cards-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
@@ -296,7 +298,11 @@ export default function PhotoGridFlipScreen({ onNext }) {
       </div>
 
       {/* Bottom Proceed Button */}
-      <div ref={bottomBtnRef} style={{ width: '100%', maxWidth: '345px', textAlign: 'center', flexShrink: 0 }}>
+      <div
+        ref={bottomBtnRef}
+        className="photo-bottom-btn-box"
+        style={{ width: '100%', maxWidth: '345px', textAlign: 'center', flexShrink: 0 }}
+      >
         <button
           onClick={handleProceed}
           style={{
